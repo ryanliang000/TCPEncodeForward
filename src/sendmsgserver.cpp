@@ -17,6 +17,7 @@ SendMsgServer::SendMsgServer(QWidget *parent)
     connect(ui.btnStop, SIGNAL(clicked()), this, SLOT(onStopServer()));
     connect(ui.btnClear, SIGNAL(clicked()), this, SLOT(onClearContent()));
     connect(ui.checkBoxShowMessage, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxShowMessage(int)));
+	connect(ui.about, SIGNAL(clicked()), this, SLOT(onAbout()));
 
     ui.btnStop->setDisabled(true);
     ui.btnStart->setDisabled(false);   
@@ -28,7 +29,11 @@ SendMsgServer::SendMsgServer(QWidget *parent)
     ui.checkBoxShowMessage->setChecked(config.nShowMsg);
     onCheckBoxShowMessage(config.nShowMsg);
 }
-
+#include "qdesktopservices.h"
+void SendMsgServer::onAbout()
+{
+	QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/rainliang000/TCPEncodeForward")));
+}
 SendMsgServer::~SendMsgServer()
 {
     if (m_pTcpServer != nullptr)

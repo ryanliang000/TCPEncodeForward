@@ -3,7 +3,7 @@
 #include "qthread.h"
 #include "TcpEncodeSocket.h"
 #include "TcpForwardClient.h"
-#include <atomic>
+//#include <atomic>
 #include <qtimer.h>
 class TcpForwardServer :
     public QTcpServer
@@ -43,8 +43,8 @@ private:
     int m_nThreadCount;
 	QByteArray m_encodeKeys;
     std::vector<QThread*> m_threads;
-    std::atomic_long m_nValidConnections;
-    std::atomic_long m_nFailedCount;
+	volatile unsigned int m_nValidConnections;
+	volatile unsigned int m_nFailedCount;
     bool m_bSendMessageToUI;
     QTimer* m_pTimer;
 };

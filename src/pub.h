@@ -1,10 +1,9 @@
 #pragma once
-#include <thread>
 
 #define TIMEOUT_CONNECT_MILLSECOND 300
-#define MAX_RECEIVE_BYTE_LENGTH 1024 * 1024 * 100
+#define MAX_RECEIVE_BYTE_LENGTH 1024 * 1024 * 1024
 #define MAX_SHOW_MSG_COUNT 128
-#define DEFUALT_ENCODE_KEY 0xA8
+#define DEFUALT_ENCODE_KEY 0xB7
 #define MAX_SHOW_MSG_LENGHT 48
 #define MAX_FAILED_COUNT 10
 #define FAILED_WAIT_SECOND 60
@@ -17,7 +16,6 @@ enum MESSAGE_TYPE
 	ENUM_RECEIVE_MESSAGE = 2,
 	ENUM_REPLY_MESSAGE = 3
 };
-const unsigned int c_nCPUCount = std::max(1u, std::thread::hardware_concurrency());
 
 #ifdef NDEBUG
 	#define  MyDebugVar1(desc1)

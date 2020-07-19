@@ -85,9 +85,6 @@
     <CustomBuild Include="sendmsgserver.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="sendmsgserver.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="TcpForwardClient.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -97,19 +94,20 @@
     <CustomBuild Include="TcpEncodeSocket.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_sendmsgserver.h">
+    <CustomBuild Include="sendmsgserver.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ToolConfig.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="pub.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TextHexDecode.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_sendmsgserver.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextHexDecode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pub.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ToolConfig.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </CustomBuild>
   </ItemGroup>
 </Project>

@@ -22,6 +22,7 @@ public slots:
 	void onConnectMsg(QString);
     void onAliveMsg(QString);
     void onCheckBoxShowMessage(int);
+	void onAbout();
 private:
     Ui::SendMsgServerClass ui;
     TcpForwardServer* m_pTcpServer;
