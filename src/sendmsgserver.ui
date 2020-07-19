@@ -206,6 +206,21 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QToolButton" name="about">
+            <property name="font">
+             <font>
+              <underline>true</underline>
+             </font>
+            </property>
+            <property name="text">
+             <string>About</string>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -237,7 +252,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="sock5server.qrc"/>
+  <include location="TcpEncodeForward.qrc"/>
  </resources>
  <connections/>
 </ui>

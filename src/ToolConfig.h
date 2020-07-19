@@ -9,11 +9,11 @@ struct Config
     int nShowMsg;
     int nIsEncode;
     Config() {
-        nRemortPort = 7070;
-        nLocalPort = 7070;
+        nRemortPort = 27070;
+        nLocalPort = 27070;
         memset(sRemoteIP, 0, 256);
         memset(sEncodeKey, 0, 256);
-        memcpy(sEncodeKey, "0xA8", sizeof("0xA8"));
+        memcpy(sEncodeKey, "0xB7", sizeof("0xB7"));
         nShowMsg = true;
         nIsEncode = true;
     }

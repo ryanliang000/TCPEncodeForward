@@ -2,11 +2,21 @@
 #include "TcpEncodeSocket.h"
 #include "TcpForwardClient.h"
 #include "TextHexDecode.h"
+#include "qsysinfo.h"
+//#include <thread>
+//const unsigned int c_nCPUCount = std::max(1u, std::thread::hardware_concurrency());
+#include "windows.h"
+#include "winbase.h"
+
 TcpForwardServer::TcpForwardServer(QObject *parent /*= 0*/, int port)
     : QTcpServer(parent)
     , m_nPort(port)
 {
-    m_nThreadCount = ceil(c_nCPUCount * 1.5);
+	SYSTEM_INFO si;
+	GetSystemInfo(&si);
+	const unsigned int c_nCPUCount = si.dwNumberOfProcessors;;
+
+	m_nThreadCount = ceil(c_nCPUCount * 1.5);
 	m_encodeKeys.push_back(DEFUALT_ENCODE_KEY);
     for (auto i = 0; i < m_nThreadCount; i++) {
         m_threads.push_back(new QThread(this));
